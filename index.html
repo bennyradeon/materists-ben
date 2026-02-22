@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Materi Pembelajaran HTML & CSS (Praktik Berurutan) — STS Kelas XI</title>
+  <meta name="description" content="Materi praktik berantai HTML & CSS (1 file index.html) untuk STS Kelas XI: dari struktur HTML, link, gambar, tabel, form, CSS, box model, hingga flexbox." />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <a class="skip-link" href="#konten">Lewati ke konten</a>
+
+  <header class="topbar">
+    <div class="wrap topbar__inner">
+      <div class="brand">
+        <div class="brand__logo" aria-hidden="true">{"</>"}</div>
+        <div class="brand__text">
+          <div class="brand__title">Materi Pembelajaran HTML & CSS (Praktik Berurutan)</div>
+          <div class="brand__subtitle">STS Kelas XI • 1 File <code>index.html</code> • Pembelajaran dilakukan secara bertahap dan berurutan</div>
+        </div>
+      </div>
+
+      <nav class="topnav" aria-label="Navigasi utama">
+        <a href="#ringkasan">Ringkasan</a>
+        <a href="#alur">Alur Belajar</a>
+        <a href="#tahapan">Tahapan</a>
+        <a href="#final">Final</a>
+        <a href="#checklist">Checklist</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="layout wrap">
+    <aside class="sidebar" aria-label="Daftar isi">
+      <div class="sidebar__card">
+        <div class="sidebar__title">Daftar Isi</div>
+        <div class="toc">
+          <a href="#ringkasan">Ringkasan Materi</a>
+          <a href="#alur">Petunjuk Penggunaan</a>
+          <a href="#tahap1">Tahap 1 — Kerangka HTML</a>
+          <a href="#tahap2">Tahap 2 — Menu & Anchor (#id)</a>
+          <a href="#tahap3">Tahap 3 — Link Eksternal</a>
+          <a href="#tahap4">Tahap 4 — Gambar (img)</a>
+          <a href="#tahap5">Tahap 5 — Tabel (table)</a>
+          <a href="#tahap6">Tahap 6 — Form (form)</a>
+          <a href="#tahap7">Tahap 7 — CSS Dasar + Box Model</a>
+          <a href="#tahap8">Tahap 8 — Flexbox + Hover</a>
+          <a href="#final">Kode Final (Template)</a>
+          <a href="#checklist">Checklist Ujian</a>
+        </div>
+
+        <div class="sidebar__hint">
+          <strong>Catatan:</strong> Pada setiap tahap, peserta didik mengganti (replace) isi file <code>index.html</code> dengan kode pada tahap tersebut, kemudian menyimpan file dan memuat ulang (refresh) halaman di browser.
+        </div>
+      </div>
+    </aside>
+
+    <main id="konten" class="content">
+      <section id="ringkasan" class="card">
+        <h1>Ringkasan Materi</h1>
+        <p>
+          Materi ini dirancang untuk latihan <strong>mengalir</strong> dari nol sampai jadi 1 website
+          (1 halaman) memakai <strong>HTML + CSS</strong>. Setiap tahap punya:
+        </p>
+        <ul>
+          <li><strong>Tujuan tahap</strong> (apa yang dipelajari)</li>
+          <li><strong>Praktik</strong> (apa yang dilakukan siswa)</li>
+          <li><strong>Kode lengkap</strong> (<code>index.html</code>) yang sudah berisi tahap sebelumnya + tambahan tahap sekarang</li>
+        </ul>
+
+        <div class="callout">
+          <div class="callout__icon" aria-hidden="true"></div>
+          <div>
+            <strong>Target akhir pembelajaran:</strong> 1 file <code>index.html</code> berisi Navbar (Flexbox), Tentang, Galeri, Tabel, Form, dan Footer dengan CSS rapi.
+          </div>
+        </div>
+
+        <div class="grid2">
+          <div class="mini">
+            <h3>📌 Kompetensi yang dilatih</h3>
+            <ul>
+              <li>Struktur HTML: <code>head</code>, <code>body</code>, <code>meta</code>, <code>title</code></li>
+              <li>Anchor internal: <code>href="#id"</code></li>
+              <li>Link eksternal: <code>target="_blank"</code></li>
+              <li>Gambar: <code>img</code> + <code>alt</code></li>
+              <li>Tabel: <code>table</code>, <code>tr</code>, <code>th</code>, <code>td</code></li>
+              <li>Form: <code>form</code>, <code>input</code>, <code>textarea</code>, <code>required</code></li>
+              <li>CSS: selector, box model, flexbox, hover</li>
+            </ul>
+          </div>
+          <div class="mini">
+            <h3>🧩 Hasil akhir halaman</h3>
+            <ol>
+              <li>Header + Navbar rapi (Flexbox)</li>
+              <li>Section Tentang + link referensi</li>
+              <li>Section Galeri (Flexbox) + hover</li>
+              <li>Section Data (Tabel rapi)</li>
+              <li>Section Kontak (Form rapi)</li>
+              <li>Footer sederhana</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <section id="alur" class="card">
+        <h2>Petunjuk Penggunaan di Kelas</h2>
+        <ol>
+          <li>Guru menampilkan materi ini (website dokumentasi).</li>
+          <li>Siswa membuat folder latihan dan file <code>index.html</code>.</li>
+          <li>Siswa <strong>copy-paste</strong> kode tahap 1, simpan, buka di browser.</li>
+          <li>Setelah paham, siswa <strong>replace</strong> isi file dengan kode tahap 2, simpan, refresh.</li>
+          <li>Ulangi sampai tahap 8 → website final jadi.</li>
+        </ol>
+
+        <div class="callout callout--warn">
+          <div class="callout__icon" aria-hidden="true">Perhatian</div>
+          <div>
+            <strong>Penting:</strong> Karena materi ini bersifat berurutan, peserta didik tidak perlu menambahkan file lain terlebih dahulu.
+            Semua latihan dilakukan di <code>index.html</code> sampai tahap akhir.
+          </div>
+        </div>
+      </section>
+
+      <section id="tahapan" class="card">
+        <h2>Tahapan Pembelajaran (Berurutan)</h2>
+        <p>
+          Di bawah ini ada 8 tahap. Setiap tahap memuat <strong>kode lengkap</strong> agar siswa bisa langsung praktik.
+          Kamu boleh menyisipkan instruksi tambahan seperti “ganti judul”, “tambah 2 gambar sendiri”, dll.
+        </p>
+
+        <!-- Tahap 1 -->
+        <article id="tahap1" class="step">
+          <div class="step__head">
+            <div class="badge">Tahap 1</div>
+            <h3>Tahap 1 — Kerangka HTML dan Judul Dasar</h3>
+          </div>
+
+          <div class="step__body">
+            <h4>Apa yang dipelajari?</h4>
+            <ul>
+              <li>Struktur HTML minimal: <code>&lt;head&gt;</code>, <code>&lt;body&gt;</code></li>
+              <li>Metadata dasar: <code>meta charset</code>, <code>viewport</code></li>
+              <li>Judul halaman: <code>title</code></li>
+              <li>Konten awal: <code>h1</code> dan <code>p</code></li>
+            </ul>
+
+            <h4>Praktik siswa</h4>
+            <ol>
+              <li>Buat file <code>index.html</code>.</li>
+              <li>Copy kode di bawah, simpan.</li>
+              <li>Buka di browser dan pastikan judul + paragraf tampil.</li>
+            </ol>
+
+            <h4>Kode lengkap (Tahap 1)</h4>
+            <div class="btnrow btnrow--tight"><button class="btn btn--small js-preview" type="button" data-stage="1">Preview Tahap 1</button></div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Website STS XI&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Website Profil Mini&lt;/h1&gt;
+  &lt;p&gt;Website ini dibuat untuk latihan HTML dan CSS.&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div class="task">
+              <strong>Latihan cepat:</strong> ubah judul <code>&lt;h1&gt;</code> jadi “Profil Kelas XI …” dan ubah paragraf sesuai tema (kelas/ekskul/event).
+            </div>
+          </div>
+        </article>
+
+        <!-- Tahap 2 -->
+        <article id="tahap2" class="step">
+          <div class="step__head">
+            <div class="badge">Tahap 2</div>
+            <h3>Tahap 2 — Menu, Tautan Internal (Anchor), dan ID Bagian</h3>
+          </div>
+
+          <div class="step__body">
+            <h4>Apa yang dipelajari?</h4>
+            <ul>
+              <li>Membuat menu sederhana menggunakan tag <code>&lt;a&gt;</code></li>
+              <li>Link internal ke bagian halaman: <code>href="#tentang"</code></li>
+              <li>Memberi identitas section dengan <code>id</code></li>
+            </ul>
+
+            <h4>Praktik siswa</h4>
+            <ol>
+              <li>Replace isi <code>index.html</code> dengan kode Tahap 2.</li>
+              <li>Klik menu “Tentang/Galeri/Data/Kontak” → harus loncat ke bagian terkait.</li>
+              <li>Ubah isi placeholder sesuai kebutuhan.</li>
+            </ol>
+
+            <h4>Kode lengkap (Tahap 2)</h4>
+            <div class="btnrow btnrow--tight"><button class="btn btn--small js-preview" type="button" data-stage="2">Preview Tahap 2</button></div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Website STS XI&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Website Profil Mini&lt;/h1&gt;
+  &lt;p&gt;Website ini dibuat untuk latihan HTML dan CSS.&lt;/p&gt;
+
+  &lt;h2&gt;Menu&lt;/h2&gt;
+  &lt;a href="#tentang"&gt;Tentang&lt;/a&gt; |
+  &lt;a href="#galeri"&gt;Galeri&lt;/a&gt; |
+  &lt;a href="#data"&gt;Data&lt;/a&gt; |
+  &lt;a href="#kontak"&gt;Kontak&lt;/a&gt;
+
+  &lt;h2 id="tentang"&gt;Tentang&lt;/h2&gt;
+  &lt;p&gt;Nama saya &lt;b&gt;(isi nama)&lt;/b&gt; dari kelas &lt;b&gt;(isi kelas)&lt;/b&gt;.&lt;/p&gt;
+  &lt;p&gt;Saya suka belajar &lt;i&gt;web&lt;/i&gt; karena ingin bisa membuat website sendiri.&lt;/p&gt;
+
+  &lt;h2 id="galeri"&gt;Galeri&lt;/h2&gt;
+  &lt;p&gt;(Nanti diisi gambar)&lt;/p&gt;
+
+  &lt;h2 id="data"&gt;Data&lt;/h2&gt;
+  &lt;p&gt;(Nanti diisi tabel)&lt;/p&gt;
+
+  &lt;h2 id="kontak"&gt;Kontak&lt;/h2&gt;
+  &lt;p&gt;(Nanti diisi form)&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div class="task">
+              <strong>Latihan cepat:</strong> tambahkan 1 menu baru “Prestasi” yang menuju ke section baru <code>id="prestasi"</code>.
+            </div>
+          </div>
+        </article>
+
+        <!-- Tahap 3 -->
+        <article id="tahap3" class="step">
+          <div class="step__head">
+            <div class="badge">Tahap 3</div>
+            <h3>Tahap 3 — Tautan Eksternal (Tab Baru)</h3>
+          </div>
+
+          <div class="step__body">
+            <h4>Apa yang dipelajari?</h4>
+            <ul>
+              <li>Link eksternal memakai <code>&lt;a href="..."&gt;</code></li>
+              <li>Membuka tab baru dengan <code>target="_blank"</code></li>
+            </ul>
+
+            <h4>Praktik siswa</h4>
+            <ol>
+              <li>Replace isi file dengan kode Tahap 3.</li>
+              <li>Klik link “W3Schools” → harus membuka tab baru.</li>
+              <li>Ganti link eksternal dengan sumber belajar lain bila perlu.</li>
+            </ol>
+
+            <h4>Kode lengkap (Tahap 3)</h4>
+            <div class="btnrow btnrow--tight"><button class="btn btn--small js-preview" type="button" data-stage="3">Preview Tahap 3</button></div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Website STS XI&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Website Profil Mini&lt;/h1&gt;
+  &lt;p&gt;Website ini dibuat untuk latihan HTML dan CSS.&lt;/p&gt;
+
+  &lt;h2&gt;Menu&lt;/h2&gt;
+  &lt;a href="#tentang"&gt;Tentang&lt;/a&gt; |
+  &lt;a href="#galeri"&gt;Galeri&lt;/a&gt; |
+  &lt;a href="#data"&gt;Data&lt;/a&gt; |
+  &lt;a href="#kontak"&gt;Kontak&lt;/a&gt;
+
+  &lt;h2 id="tentang"&gt;Tentang&lt;/h2&gt;
+  &lt;p&gt;Nama saya &lt;b&gt;(isi nama)&lt;/b&gt; dari kelas &lt;b&gt;(isi kelas)&lt;/b&gt;.&lt;/p&gt;
+  &lt;p&gt;Saya suka belajar &lt;i&gt;web&lt;/i&gt; karena ingin bisa membuat website sendiri.&lt;/p&gt;
+  &lt;p&gt;
+    Belajar dari:
+    &lt;a href="https://www.w3schools.com" target="_blank"&gt;W3Schools&lt;/a&gt;
+  &lt;/p&gt;
+
+  &lt;h2 id="galeri"&gt;Galeri&lt;/h2&gt;
+  &lt;p&gt;(Nanti diisi gambar)&lt;/p&gt;
+
+  &lt;h2 id="data"&gt;Data&lt;/h2&gt;
+  &lt;p&gt;(Nanti diisi tabel)&lt;/p&gt;
+
+  &lt;h2 id="kontak"&gt;Kontak&lt;/h2&gt;
+  &lt;p&gt;(Nanti diisi form)&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div class="task">
+              <strong>Latihan cepat:</strong> tambahkan 1 link eksternal lagi (misalnya video YouTube tutorial HTML) dan pastikan juga tab baru.
+            </div>
+          </div>
+        </article>
+
+        <!-- Tahap 4 -->
+        <article id="tahap4" class="step">
+          <div class="step__head">
+            <div class="badge">Tahap 4</div>
+            <h3>Tahap 4 — Gambar (img) dan Atribut alt</h3>
+          </div>
+
+          <div class="step__body">
+            <h4>Apa yang dipelajari?</h4>
+            <ul>
+              <li>Menampilkan gambar dengan <code>&lt;img&gt;</code></li>
+              <li>Makna atribut <code>src</code> dan pentingnya <code>alt</code></li>
+            </ul>
+
+            <h4>Praktik siswa</h4>
+            <ol>
+              <li>Replace file dengan kode Tahap 4.</li>
+              <li>Pastikan ada 3 gambar muncul.</li>
+              <li>(Opsional) Ganti sumber gambar dengan foto sendiri dari folder lokal.</li>
+            </ol>
+
+            <h4>Kode lengkap (Tahap 4)</h4>
+            <div class="btnrow btnrow--tight"><button class="btn btn--small js-preview" type="button" data-stage="4">Preview Tahap 4</button></div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Website STS XI&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Website Profil Mini&lt;/h1&gt;
+  &lt;p&gt;Website ini dibuat untuk latihan HTML dan CSS.&lt;/p&gt;
+
+  &lt;h2&gt;Menu&lt;/h2&gt;
+  &lt;a href="#tentang"&gt;Tentang&lt;/a&gt; |
+  &lt;a href="#galeri"&gt;Galeri&lt;/a&gt; |
+  &lt;a href="#data"&gt;Data&lt;/a&gt; |
+  &lt;a href="#kontak"&gt;Kontak&lt;/a&gt;
+
+  &lt;h2 id="tentang"&gt;Tentang&lt;/h2&gt;
+  &lt;p&gt;Nama saya &lt;b&gt;(isi nama)&lt;/b&gt; dari kelas &lt;b&gt;(isi kelas)&lt;/b&gt;.&lt;/p&gt;
+  &lt;p&gt;Saya suka belajar &lt;i&gt;web&lt;/i&gt; karena ingin bisa membuat website sendiri.&lt;/p&gt;
+  &lt;p&gt;
+    Belajar dari:
+    &lt;a href="https://www.w3schools.com" target="_blank"&gt;W3Schools&lt;/a&gt;
+  &lt;/p&gt;
+
+  &lt;h2 id="galeri"&gt;Galeri&lt;/h2&gt;
+  &lt;img src="https://picsum.photos/300/200?random=1" alt="Foto 1"&gt;
+  &lt;img src="https://picsum.photos/300/200?random=2" alt="Foto 2"&gt;
+  &lt;img src="https://picsum.photos/300/200?random=3" alt="Foto 3"&gt;
+
+  &lt;h2 id="data"&gt;Data&lt;/h2&gt;
+  &lt;p&gt;(Nanti diisi tabel)&lt;/p&gt;
+
+  &lt;h2 id="kontak"&gt;Kontak&lt;/h2&gt;
+  &lt;p&gt;(Nanti diisi form)&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div class="task">
+              <strong>Latihan cepat:</strong> ubah <code>alt</code> menjadi deskripsi nyata (contoh: “Kegiatan pramuka hari Sabtu”).
+            </div>
+          </div>
+        </article>
+
+        <!-- Tahap 5 -->
+        <article id="tahap5" class="step">
+          <div class="step__head">
+            <div class="badge">Tahap 5</div>
+            <h3>Tahap 5 — Tabel (table, tr, th, td)</h3>
+          </div>
+
+          <div class="step__body">
+            <h4>Apa yang dipelajari?</h4>
+            <ul>
+              <li>Membuat tabel data dengan <code>table</code>, <code>tr</code>, <code>th</code>, <code>td</code></li>
+              <li>Membedakan header kolom (<code>th</code>) dan isi data (<code>td</code>)</li>
+            </ul>
+
+            <h4>Praktik siswa</h4>
+            <ol>
+              <li>Replace file dengan kode Tahap 5.</li>
+              <li>Tambah 1 baris data lagi (jadi 5 baris).</li>
+            </ol>
+
+            <h4>Kode lengkap (Tahap 5)</h4>
+            <div class="btnrow btnrow--tight"><button class="btn btn--small js-preview" type="button" data-stage="5">Preview Tahap 5</button></div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Website STS XI&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Website Profil Mini&lt;/h1&gt;
+  &lt;p&gt;Website ini dibuat untuk latihan HTML dan CSS.&lt;/p&gt;
+
+  &lt;h2&gt;Menu&lt;/h2&gt;
+  &lt;a href="#tentang"&gt;Tentang&lt;/a&gt; |
+  &lt;a href="#galeri"&gt;Galeri&lt;/a&gt; |
+  &lt;a href="#data"&gt;Data&lt;/a&gt; |
+  &lt;a href="#kontak"&gt;Kontak&lt;/a&gt;
+
+  &lt;h2 id="tentang"&gt;Tentang&lt;/h2&gt;
+  &lt;p&gt;Nama saya &lt;b&gt;(isi nama)&lt;/b&gt; dari kelas &lt;b&gt;(isi kelas)&lt;/b&gt;.&lt;/p&gt;
+  &lt;p&gt;Saya suka belajar &lt;i&gt;web&lt;/i&gt; karena ingin bisa membuat website sendiri.&lt;/p&gt;
+  &lt;p&gt;
+    Belajar dari:
+    &lt;a href="https://www.w3schools.com" target="_blank"&gt;W3Schools&lt;/a&gt;
+  &lt;/p&gt;
+
+  &lt;h2 id="galeri"&gt;Galeri&lt;/h2&gt;
+  &lt;img src="https://picsum.photos/300/200?random=1" alt="Foto 1"&gt;
+  &lt;img src="https://picsum.photos/300/200?random=2" alt="Foto 2"&gt;
+  &lt;img src="https://picsum.photos/300/200?random=3" alt="Foto 3"&gt;
+
+  &lt;h2 id="data"&gt;Data Kegiatan&lt;/h2&gt;
+  &lt;table border="1" cellpadding="8"&gt;
+    &lt;tr&gt;
+      &lt;th&gt;No&lt;/th&gt;
+      &lt;th&gt;Kegiatan&lt;/th&gt;
+      &lt;th&gt;Hari&lt;/th&gt;
+      &lt;th&gt;Jam&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Latihan&lt;/td&gt;&lt;td&gt;Senin&lt;/td&gt;&lt;td&gt;15.00&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Rapat&lt;/td&gt;&lt;td&gt;Rabu&lt;/td&gt;&lt;td&gt;14.00&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Evaluasi&lt;/td&gt;&lt;td&gt;Jumat&lt;/td&gt;&lt;td&gt;13.00&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Kegiatan Sosial&lt;/td&gt;&lt;td&gt;Sabtu&lt;/td&gt;&lt;td&gt;09.00&lt;/td&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+
+  &lt;h2 id="kontak"&gt;Kontak&lt;/h2&gt;
+  &lt;p&gt;(Nanti diisi form)&lt;/p&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div class="task">
+              <strong>Latihan cepat:</strong> ubah tabel menjadi “Daftar Anggota” (Nama, Kelas, Jabatan) minimal 5 baris.
+            </div>
+          </div>
+        </article>
+
+        <!-- Tahap 6 -->
+        <article id="tahap6" class="step">
+          <div class="step__head">
+            <div class="badge">Tahap 6</div>
+            <h3>Tahap 6 — Formulir (Form) dan Komponen Input</h3>
+          </div>
+
+          <div class="step__body">
+            <h4>Apa yang dipelajari?</h4>
+            <ul>
+              <li>Struktur form: <code>&lt;form action method&gt;</code></li>
+              <li>Input dasar: <code>text</code>, <code>email</code>, <code>radio</code>, <code>checkbox</code></li>
+              <li>Validasi sederhana: <code>required</code>, <code>type="email"</code></li>
+              <li>Input teks panjang: <code>textarea</code></li>
+            </ul>
+
+            <h4>Praktik siswa</h4>
+            <ol>
+              <li>Replace file dengan kode Tahap 6.</li>
+              <li>Coba kirim form dengan email tidak valid → harus ditolak browser.</li>
+              <li>Tambah 1 input lagi (misal: <code>select</code> “Kelas”).</li>
+            </ol>
+
+            <h4>Kode lengkap (Tahap 6)</h4>
+            <div class="btnrow btnrow--tight"><button class="btn btn--small js-preview" type="button" data-stage="6">Preview Tahap 6</button></div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Website STS XI&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Website Profil Mini&lt;/h1&gt;
+  &lt;p&gt;Website ini dibuat untuk latihan HTML dan CSS.&lt;/p&gt;
+
+  &lt;h2&gt;Menu&lt;/h2&gt;
+  &lt;a href="#tentang"&gt;Tentang&lt;/a&gt; |
+  &lt;a href="#galeri"&gt;Galeri&lt;/a&gt; |
+  &lt;a href="#data"&gt;Data&lt;/a&gt; |
+  &lt;a href="#kontak"&gt;Kontak&lt;/a&gt;
+
+  &lt;h2 id="tentang"&gt;Tentang&lt;/h2&gt;
+  &lt;p&gt;Nama saya &lt;b&gt;(isi nama)&lt;/b&gt; dari kelas &lt;b&gt;(isi kelas)&lt;/b&gt;.&lt;/p&gt;
+  &lt;p&gt;Saya suka belajar &lt;i&gt;web&lt;/i&gt; karena ingin bisa membuat website sendiri.&lt;/p&gt;
+  &lt;p&gt;
+    Belajar dari:
+    &lt;a href="https://www.w3schools.com" target="_blank"&gt;W3Schools&lt;/a&gt;
+  &lt;/p&gt;
+
+  &lt;h2 id="galeri"&gt;Galeri&lt;/h2&gt;
+  &lt;img src="https://picsum.photos/300/200?random=1" alt="Foto 1"&gt;
+  &lt;img src="https://picsum.photos/300/200?random=2" alt="Foto 2"&gt;
+  &lt;img src="https://picsum.photos/300/200?random=3" alt="Foto 3"&gt;
+
+  &lt;h2 id="data"&gt;Data Kegiatan&lt;/h2&gt;
+  &lt;table border="1" cellpadding="8"&gt;
+    &lt;tr&gt;&lt;th&gt;No&lt;/th&gt;&lt;th&gt;Kegiatan&lt;/th&gt;&lt;th&gt;Hari&lt;/th&gt;&lt;th&gt;Jam&lt;/th&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Latihan&lt;/td&gt;&lt;td&gt;Senin&lt;/td&gt;&lt;td&gt;15.00&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Rapat&lt;/td&gt;&lt;td&gt;Rabu&lt;/td&gt;&lt;td&gt;14.00&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Evaluasi&lt;/td&gt;&lt;td&gt;Jumat&lt;/td&gt;&lt;td&gt;13.00&lt;/td&gt;&lt;/tr&gt;
+    &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Kegiatan Sosial&lt;/td&gt;&lt;td&gt;Sabtu&lt;/td&gt;&lt;td&gt;09.00&lt;/td&gt;&lt;/tr&gt;
+  &lt;/table&gt;
+
+  &lt;h2 id="kontak"&gt;Kontak / Pendaftaran&lt;/h2&gt;
+  &lt;form action="#" method="GET"&gt;
+    &lt;p&gt;
+      Nama:&lt;br&gt;
+      &lt;input type="text" name="nama" placeholder="Masukkan nama" required&gt;
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      Email:&lt;br&gt;
+      &lt;input type="email" name="email" placeholder="contoh@email.com" required&gt;
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      Kategori:&lt;br&gt;
+      &lt;input type="radio" name="kategori" value="siswa" required&gt; Siswa
+      &lt;input type="radio" name="kategori" value="guru"&gt; Guru
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      Minat:&lt;br&gt;
+      &lt;input type="checkbox" name="minat" value="coding"&gt; Coding
+      &lt;input type="checkbox" name="minat" value="desain"&gt; Desain
+      &lt;input type="checkbox" name="minat" value="multimedia"&gt; Multimedia
+    &lt;/p&gt;
+
+    &lt;p&gt;
+      Pesan:&lt;br&gt;
+      &lt;textarea name="pesan" rows="4" placeholder="Tulis pesan..."&gt;&lt;/textarea&gt;
+    &lt;/p&gt;
+
+    &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+  &lt;/form&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div class="task">
+              <strong>Latihan cepat:</strong> tambahkan <code>select</code> “Kelas” (XI IPA / XI IPS / XI …) di dalam form.
+            </div>
+          </div>
+        </article>
+
+        <!-- Tahap 7 -->
+        <article id="tahap7" class="step">
+          <div class="step__head">
+            <div class="badge">Tahap 7</div>
+            <h3>Tahap 7 — CSS Dasar, Selector, dan Box Model</h3>
+          </div>
+
+          <div class="step__body">
+            <h4>Apa yang dipelajari?</h4>
+            <ul>
+              <li>Menulis CSS di <code>&lt;style&gt;</code> dalam <code>&lt;head&gt;</code></li>
+              <li>Selector: element (<code>body</code>, <code>img</code>), class (<code>.box</code>), id (<code>#tentang</code>)</li>
+              <li>Box model: <code>margin</code>, <code>padding</code>, <code>border</code></li>
+              <li>Properti gambar: <code>width</code>, <code>height</code>, <code>object-fit</code></li>
+            </ul>
+
+            <h4>Praktik siswa</h4>
+            <ol>
+              <li>Replace file dengan kode Tahap 7.</li>
+              <li>Perhatikan: setiap section jadi “kartu” (box).</li>
+              <li>Ubah <code>background</code> body, ubah <code>border</code> box, dan amati perubahannya.</li>
+            </ol>
+
+            <h4>Kode lengkap (Tahap 7)</h4>
+            <div class="btnrow btnrow--tight"><button class="btn btn--small js-preview" type="button" data-stage="7">Preview Tahap 7</button></div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Website STS XI&lt;/title&gt;
+
+  &lt;style&gt;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    h1 {
+      margin: 16px;
+    }
+
+    .box {
+      background: white;
+      margin: 16px;          /* box model */
+      padding: 16px;         /* box model */
+      border: 1px solid #ddd;/* box model */
+      border-radius: 12px;
+    }
+
+    img {
+      width: 220px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #eee;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;h1&gt;Website Profil Mini&lt;/h1&gt;
+
+  &lt;div class="box"&gt;
+    &lt;p&gt;Website ini dibuat untuk latihan HTML dan CSS.&lt;/p&gt;
+
+    &lt;h2&gt;Menu&lt;/h2&gt;
+    &lt;a href="#tentang"&gt;Tentang&lt;/a&gt; |
+    &lt;a href="#galeri"&gt;Galeri&lt;/a&gt; |
+    &lt;a href="#data"&gt;Data&lt;/a&gt; |
+    &lt;a href="#kontak"&gt;Kontak&lt;/a&gt;
+  &lt;/div&gt;
+
+  &lt;div class="box" id="tentang"&gt;
+    &lt;h2&gt;Tentang&lt;/h2&gt;
+    &lt;p&gt;Nama saya &lt;b&gt;(isi nama)&lt;/b&gt; dari kelas &lt;b&gt;(isi kelas)&lt;/b&gt;.&lt;/p&gt;
+    &lt;p&gt;Saya suka belajar &lt;i&gt;web&lt;/i&gt; karena ingin bisa membuat website sendiri.&lt;/p&gt;
+    &lt;p&gt;
+      Belajar dari:
+      &lt;a href="https://www.w3schools.com" target="_blank"&gt;W3Schools&lt;/a&gt;
+    &lt;/p&gt;
+  &lt;/div&gt;
+
+  &lt;div class="box" id="galeri"&gt;
+    &lt;h2&gt;Galeri&lt;/h2&gt;
+    &lt;img src="https://picsum.photos/300/200?random=1" alt="Foto 1"&gt;
+    &lt;img src="https://picsum.photos/300/200?random=2" alt="Foto 2"&gt;
+    &lt;img src="https://picsum.photos/300/200?random=3" alt="Foto 3"&gt;
+  &lt;/div&gt;
+
+  &lt;div class="box" id="data"&gt;
+    &lt;h2&gt;Data Kegiatan&lt;/h2&gt;
+    &lt;table border="1" cellpadding="8"&gt;
+      &lt;tr&gt;&lt;th&gt;No&lt;/th&gt;&lt;th&gt;Kegiatan&lt;/th&gt;&lt;th&gt;Hari&lt;/th&gt;&lt;th&gt;Jam&lt;/th&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Latihan&lt;/td&gt;&lt;td&gt;Senin&lt;/td&gt;&lt;td&gt;15.00&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Rapat&lt;/td&gt;&lt;td&gt;Rabu&lt;/td&gt;&lt;td&gt;14.00&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Evaluasi&lt;/td&gt;&lt;td&gt;Jumat&lt;/td&gt;&lt;td&gt;13.00&lt;/td&gt;&lt;/tr&gt;
+      &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Kegiatan Sosial&lt;/td&gt;&lt;td&gt;Sabtu&lt;/td&gt;&lt;td&gt;09.00&lt;/td&gt;&lt;/tr&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+
+  &lt;div class="box" id="kontak"&gt;
+    &lt;h2&gt;Kontak / Pendaftaran&lt;/h2&gt;
+    &lt;form action="#" method="GET"&gt;
+      &lt;p&gt;Nama:&lt;br&gt;&lt;input type="text" name="nama" required&gt;&lt;/p&gt;
+      &lt;p&gt;Email:&lt;br&gt;&lt;input type="email" name="email" required&gt;&lt;/p&gt;
+      &lt;p&gt;Kategori:&lt;br&gt;
+        &lt;input type="radio" name="kategori" value="siswa" required&gt; Siswa
+        &lt;input type="radio" name="kategori" value="guru"&gt; Guru
+      &lt;/p&gt;
+      &lt;p&gt;Minat:&lt;br&gt;
+        &lt;input type="checkbox" name="minat" value="coding"&gt; Coding
+        &lt;input type="checkbox" name="minat" value="desain"&gt; Desain
+        &lt;input type="checkbox" name="minat" value="multimedia"&gt; Multimedia
+      &lt;/p&gt;
+      &lt;p&gt;Pesan:&lt;br&gt;&lt;textarea name="pesan" rows="4"&gt;&lt;/textarea&gt;&lt;/p&gt;
+      &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+    &lt;/form&gt;
+  &lt;/div&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div class="task">
+              <strong>Latihan cepat:</strong> ubah <code>.box</code> menjadi <code>border: 2px solid ...</code> dan ubah <code>padding</code> menjadi 24px lalu amati perbedaan.
+            </div>
+          </div>
+        </article>
+
+        <!-- Tahap 8 -->
+        <article id="tahap8" class="step">
+          <div class="step__head">
+            <div class="badge badge--final">Tahap 8</div>
+            <h3>Tahap 8 — Flexbox (Navbar dan Galeri) serta Efek Hover</h3>
+          </div>
+
+          <div class="step__body">
+            <h4>Apa yang dipelajari?</h4>
+            <ul>
+              <li>Navbar rapi dengan Flexbox: <code>display:flex</code>, <code>justify-content</code>, <code>align-items</code>, <code>gap</code></li>
+              <li>Galeri rapi dengan Flexbox + <code>flex-wrap</code></li>
+              <li>Efek interaksi (hover): <code>:hover</code>, <code>transition</code>, <code>transform</code>, <code>opacity</code></li>
+              <li>Merapikan tabel & form dengan CSS</li>
+            </ul>
+
+            <h4>Praktik siswa</h4>
+            <ol>
+              <li>Replace file dengan kode Tahap 8.</li>
+              <li>Pastikan navbar rapi dan galeri responsif (jika layar sempit, gambar turun baris).</li>
+              <li>Coba hover pada menu dan gambar.</li>
+            </ol>
+
+            <h4>Kode lengkap (Tahap 8)</h4>
+            <div class="btnrow btnrow--tight"><button class="btn btn--small js-preview" type="button" data-stage="8">Preview Tahap 8</button></div>
+            <pre class="code"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang="id"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+  &lt;title&gt;Website STS XI&lt;/title&gt;
+
+  &lt;style&gt;
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background: #f4f6f8;
+      color: #222;
+    }
+
+    /* NAVBAR FLEXBOX */
+    .navbar {
+      background: white;
+      border-bottom: 1px solid #ddd;
+      padding: 16px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      font-weight: bold;
+      font-size: 18px;
+    }
+
+    .menu {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .menu a {
+      text-decoration: none;
+      color: #222;
+      padding: 8px 12px;
+      border-radius: 8px;
+    }
+
+    .menu a:hover {
+      background: #e9eef3;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 20px auto;
+      padding: 0 16px;
+    }
+
+    .box {
+      background: white;
+      margin-bottom: 16px;
+      padding: 16px;
+      border: 1px solid #ddd;
+      border-radius: 12px;
+    }
+
+    /* GALERI FLEXBOX */
+    .galeri {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .galeri img {
+      width: 220px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 12px;
+      border: 2px solid #eee;
+      transition: 0.2s;
+    }
+
+    .galeri img:hover {
+      transform: scale(1.03);
+      opacity: 0.9;
+    }
+
+    /* TABEL RAPI */
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th, td {
+      border: 1px solid #ddd;
+      padding: 10px;
+      text-align: left;
+    }
+
+    th {
+      background: #f2f2f2;
+    }
+
+    /* FORM RAPI */
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      box-sizing: border-box;
+    }
+
+    button {
+      background: #1f6feb;
+      color: white;
+      border: none;
+      padding: 10px 14px;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      opacity: 0.9;
+    }
+
+    footer {
+      text-align: center;
+      padding: 16px;
+      color: #666;
+    }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body&gt;
+
+  &lt;div class="navbar"&gt;
+    &lt;div class="brand"&gt;Profil Mini (STS XI)&lt;/div&gt;
+    &lt;div class="menu"&gt;
+      &lt;a href="#tentang"&gt;Tentang&lt;/a&gt;
+      &lt;a href="#galeri"&gt;Galeri&lt;/a&gt;
+      &lt;a href="#data"&gt;Data&lt;/a&gt;
+      &lt;a href="#kontak"&gt;Kontak&lt;/a&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+
+  &lt;div class="container"&gt;
+
+    &lt;div class="box" id="tentang"&gt;
+      &lt;h2&gt;Tentang&lt;/h2&gt;
+      &lt;p&gt;Nama saya &lt;b&gt;(isi nama)&lt;/b&gt; dari kelas &lt;b&gt;(isi kelas)&lt;/b&gt;.&lt;/p&gt;
+      &lt;p&gt;Saya suka belajar &lt;i&gt;web&lt;/i&gt; karena ingin bisa membuat website sendiri.&lt;/p&gt;
+      &lt;p&gt;
+        Belajar dari:
+        &lt;a href="https://www.w3schools.com" target="_blank"&gt;W3Schools&lt;/a&gt;
+      &lt;/p&gt;
+    &lt;/div&gt;
+
+    &lt;div class="box" id="galeri"&gt;
+      &lt;h2&gt;Galeri&lt;/h2&gt;
+      &lt;div class="galeri"&gt;
+        &lt;img src="https://picsum.photos/300/200?random=1" alt="Foto 1"&gt;
+        &lt;img src="https://picsum.photos/300/200?random=2" alt="Foto 2"&gt;
+        &lt;img src="https://picsum.photos/300/200?random=3" alt="Foto 3"&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+
+    &lt;div class="box" id="data"&gt;
+      &lt;h2&gt;Data Kegiatan&lt;/h2&gt;
+      &lt;table&gt;
+        &lt;thead&gt;
+          &lt;tr&gt;&lt;th&gt;No&lt;/th&gt;&lt;th&gt;Kegiatan&lt;/th&gt;&lt;th&gt;Hari&lt;/th&gt;&lt;th&gt;Jam&lt;/th&gt;&lt;/tr&gt;
+        &lt;/thead&gt;
+        &lt;tbody&gt;
+          &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Latihan&lt;/td&gt;&lt;td&gt;Senin&lt;/td&gt;&lt;td&gt;15.00&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Rapat&lt;/td&gt;&lt;td&gt;Rabu&lt;/td&gt;&lt;td&gt;14.00&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Evaluasi&lt;/td&gt;&lt;td&gt;Jumat&lt;/td&gt;&lt;td&gt;13.00&lt;/td&gt;&lt;/tr&gt;
+          &lt;tr&gt;&lt;td&gt;4&lt;/td&gt;&lt;td&gt;Kegiatan Sosial&lt;/td&gt;&lt;td&gt;Sabtu&lt;/td&gt;&lt;td&gt;09.00&lt;/td&gt;&lt;/tr&gt;
+        &lt;/tbody&gt;
+      &lt;/table&gt;
+    &lt;/div&gt;
+
+    &lt;div class="box" id="kontak"&gt;
+      &lt;h2&gt;Kontak / Pendaftaran&lt;/h2&gt;
+      &lt;form action="#" method="GET"&gt;
+        &lt;p&gt;Nama:&lt;br&gt;&lt;input type="text" name="nama" placeholder="Masukkan nama" required&gt;&lt;/p&gt;
+        &lt;p&gt;Email:&lt;br&gt;&lt;input type="email" name="email" placeholder="contoh@email.com" required&gt;&lt;/p&gt;
+
+        &lt;p&gt;Kategori:&lt;br&gt;
+          &lt;input type="radio" name="kategori" value="siswa" required&gt; Siswa
+          &lt;input type="radio" name="kategori" value="guru"&gt; Guru
+        &lt;/p&gt;
+
+        &lt;p&gt;Minat:&lt;br&gt;
+          &lt;input type="checkbox" name="minat" value="coding"&gt; Coding
+          &lt;input type="checkbox" name="minat" value="desain"&gt; Desain
+          &lt;input type="checkbox" name="minat" value="multimedia"&gt; Multimedia
+        &lt;/p&gt;
+
+        &lt;p&gt;Pesan:&lt;br&gt;&lt;textarea name="pesan" rows="4" placeholder="Tulis pesan..."&gt;&lt;/textarea&gt;&lt;/p&gt;
+
+        &lt;button type="submit"&gt;Kirim&lt;/button&gt;
+      &lt;/form&gt;
+    &lt;/div&gt;
+
+  &lt;/div&gt;
+
+  &lt;footer&gt;
+    &lt;small&gt;© 2026 - STS Kelas XI | 1 Page Website&lt;/small&gt;
+  &lt;/footer&gt;
+
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+            <div class="task">
+              <strong>Latihan cepat:</strong> ubah warna tombol (property <code>background</code>) dan buat hover tombol menjadi lebih gelap (misal ubah <code>opacity</code> atau ganti warna).
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <section id="final" class="card">
+        <h2>Template Akhir (Untuk Ujian)</h2>
+        <p>
+          Ini adalah versi final yang sama konsepnya dengan Tahap 8, namun ditulis ulang agar lebih rapi dan siap dipakai sebagai template ujian.
+          Kamu bisa pakai ini sebagai <strong>starter file</strong> untuk siswa.
+        </p>
+
+        <div class="callout callout--ok">
+          <div class="callout__icon" aria-hidden="true">Informasi</div>
+          <div>
+            <strong>Rekomendasi pelaksanaan ujian:</strong> Guru dapat meminta peserta didik menyesuaikan isi berikut: judul, deskripsi, minimal 5 baris tabel, minimal 5 gambar, dan menambah 1 input baru pada form.
+          </div>
+        </div>
+
+        <div class="btnrow">
+          <a class="btn" href="#tahap8">Lihat Tahap 8 (kode final berantai)</a>
+          <a class="btn btn--ghost" href="#checklist">Lompat ke Checklist</a>
+        </div>
+      </section>
+
+      <section id="checklist" class="card">
+        <h2>Checklist Capaian Pembelajaran</h2>
+
+        <div class="grid2">
+          <div class="mini">
+            <h3>HTML </h3>
+            <ul class="check">
+              <li><input type="checkbox"> Membuat struktur HTML lengkap</li>
+              <li><input type="checkbox"> Membuat menu anchor <code>#id</code></li>
+              <li><input type="checkbox"> Membuat link eksternal tab baru</li>
+              <li><input type="checkbox"> Menampilkan gambar + <code>alt</code></li>
+              <li><input type="checkbox"> Membuat tabel minimal 4 baris</li>
+              <li><input type="checkbox"> Membuat form dengan email <code>required</code></li>
+            </ul>
+          </div>
+
+          <div class="mini">
+            <h3>CSS </h3>
+            <ul class="check">
+              <li><input type="checkbox"> Menggunakan selector element, class, dan id</li>
+              <li><input type="checkbox"> Menggunakan box model (margin/padding/border)</li>
+              <li><input type="checkbox"> Membuat Flexbox navbar atau galeri</li>
+              <li><input type="checkbox"> Membuat efek hover pada menu/gambar</li>
+              <li><input type="checkbox"> Merapikan tabel dan form</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="callout callout--warn">
+          <div class="callout__icon" aria-hidden="true">Catatan</div>
+          <div>
+            <strong>Latihan penguatan:</strong> Mintalah peserta didik membuat tema berbeda (Profil Kelas / Ekskul / Event) dengan tetap memakai struktur final yang sama.
+          </div>
+        </div>
+      </section>
+
+      <section class="card">
+        <h2>Penutup</h2>
+        <p>
+          Materi ini dapat ditampilkan secara lokal (membuka <code>index.html</code>) atau diunggah ke hosting sekolah.
+          Apabila diperlukan, materi ini dapat dikembangkan dengan fitur tambahan seperti tombol salin kode (Copy Code) pada setiap tahap menggunakan JavaScript sederhana.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <!-- Preview Modal -->
+  <div id="previewModal" class="modal" hidden aria-hidden="true">
+    <div class="modal__backdrop" data-close="true"></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="previewTitle">
+      <div class="modal__header">
+        <div class="modal__title" id="previewTitle">Preview</div>
+        <button class="modal__close" type="button" aria-label="Tutup" data-close="true">✕</button>
+      </div>
+      <div class="modal__body">
+        <iframe id="previewFrame" class="modal__frame" title="Preview tahap" sandbox="allow-forms"></iframe>
+      </div>
+      <div class="modal__footer">
+        <div class="modal__note">Preview ini merender kode <code>index.html</code> pada tahap yang dipilih.</div>
+        <button class="btn btn--ghost" type="button" data-close="true">Tutup</button>
+      </div>
+    </div>
+  </div>
+
+  <script defer src="app.js"></script>
+</body>
+</html>
